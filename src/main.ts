@@ -1,10 +1,13 @@
-import { createApp } from 'vue'
-
-import App from './App.vue'
+import {createApp} from 'vue';
 
 // @ts-ignore
-const app = createApp(App)
+import App from "./App.vue";
 
-app.mount("#app")
+import {router} from './router/router';
 
-//好配置
+
+const app = createApp(App);
+
+app.use(router);
+app.mount('#app');
+
