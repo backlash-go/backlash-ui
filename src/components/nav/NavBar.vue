@@ -19,7 +19,6 @@ export default {
   name: "NavBar",
   setup() {
     const menuVisible = inject<Ref<Boolean>>("menuVisible") //get
-    console.log(menuVisible?.value)
   }
 };
 </script>
@@ -47,6 +46,17 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    @media (max-width: 500px) {
+      .doc {
+        display: none;
+      }
+      .navBar-logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
     }
   }
 }

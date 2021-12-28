@@ -1,6 +1,9 @@
 <template>
   <nav-bar></nav-bar>
-  <div> this is home</div>
+  <div class="banner">
+
+  </div>
+
 
 </template>
 
