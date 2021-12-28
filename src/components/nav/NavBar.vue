@@ -1,15 +1,26 @@
 <template>
   <div class="navBar">
     <div class="navBar-wrapper">
-      <div class="navBar-logo">logo</div>
-      <div class="doc">doc</div>
+      <div class="navBar-logo">
+        <svg-icon name="square"/>
+      </div>
+      <div class="doc">
+        <svg-icon name="typescript"/>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+
+import {inject, Ref} from 'vue';
+
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  setup() {
+    const menuVisible = inject<Ref<Boolean>>("menuVisible") //get
+    console.log(menuVisible?.value)
+  }
 };
 </script>
 
@@ -24,13 +35,19 @@ export default {
   }
 
   .navBar-wrapper {
-    width: 80%;
+    width: 92%;
     background-color: $navBar-color;
     display: flex;
     @include df-layout;
     margin-right: auto;
     margin-left: auto;
-    padding: 16px 0;
+    padding: 22px 0;
+
+    .navBar-logo, .doc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
