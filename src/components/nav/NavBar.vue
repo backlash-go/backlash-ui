@@ -2,10 +2,10 @@
   <div class="navBar">
     <div class="navBar-wrapper">
       <div class="navBar-logo">
-        <svg-icon name="square"/>
+        <Icon name="square"/>
       </div>
       <div class="doc">
-        <svg-icon name="typescript"/>
+        <Icon name="typescript"/>
       </div>
     </div>
   </div>
@@ -17,6 +17,7 @@ import {inject, Ref} from 'vue';
 
 export default {
   name: "NavBar",
+
   setup() {
     const menuVisible = inject<Ref<Boolean>>("menuVisible") //get
   }
@@ -25,7 +26,13 @@ export default {
 
 <style lang="scss" scoped>
 .navBar {
-  $navBar-color: #f0f0f0;
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  $navBar-color: #fff;
+  //border-bottom: 3px solid  #1296db;
+  box-shadow: 0 3px 3px #1296db !important;
 
   background-color: $navBar-color;
   @mixin df-layout {
@@ -49,6 +56,7 @@ export default {
     }
 
     @media (max-width: 500px) {
+
       .doc {
         display: none;
       }
