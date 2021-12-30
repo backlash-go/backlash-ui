@@ -1,10 +1,21 @@
 <template>
-  <div> this is doc</div>
+  <nav-bar></nav-bar>
 </template>
 
 <script lang="ts">
+
+import NavBar from '@/components/nav/NavBar.vue';
+
+
 export default {
-  name: "Home"
+  name: 'Home',
+  components: {NavBar},
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 

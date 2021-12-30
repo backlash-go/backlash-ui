@@ -5,8 +5,13 @@
         <Icon name="square"/>
       </div>
       <div class="doc">
-        <Icon name="typescript"/>
+        <h3>文档</h3>
       </div>
+
+      <div class="toggleAside">
+        <Icon name="toggle"/>
+      </div>
+
     </div>
   </div>
 </template>
@@ -16,20 +21,23 @@
 import {inject, Ref} from 'vue';
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
 
   setup() {
-    const menuVisible = inject<Ref<Boolean>>("menuVisible") //get
+    const menuVisible = inject<Ref<Boolean>>('menuVisible'); //get
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .navBar {
+  position: relative;
+
   .icon {
     width: 32px;
     height: 32px;
   }
+
   $navBar-color: #fff;
   //border-bottom: 3px solid  #1296db;
   box-shadow: 0 3px 3px #1296db !important;
@@ -55,6 +63,15 @@ export default {
       align-items: center;
     }
 
+    .doc {
+      color: #1296db;
+    }
+
+    .toggleAside {
+      position: absolute;
+      display: none;
+    }
+
     @media (max-width: 500px) {
 
       .doc {
@@ -64,6 +81,10 @@ export default {
         margin-left: auto;
         margin-right: auto;
       }
+      .toggleAside {
+        display: inline-block;
+      }
+
 
     }
   }
