@@ -66,7 +66,6 @@ export default {
     color: #1296db;
   }
 
-  margin-top: 3px;
   background: linear-gradient(145deg,#e3fffd 0,#b7e9e6 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 

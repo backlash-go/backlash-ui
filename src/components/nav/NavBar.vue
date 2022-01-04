@@ -8,7 +8,7 @@
         <h3>文档</h3>
       </div>
 
-      <div class="toggleAside">
+      <div class="toggleAside" @click="toggleMenu">
         <Icon name="toggle"/>
       </div>
 
@@ -18,20 +18,27 @@
 
 <script lang="ts">
 
-import {inject, Ref} from 'vue';
+import { inject, Ref } from "vue";
 
 export default {
   name: 'NavBar',
 
   setup() {
-    const menuVisible = inject<Ref<Boolean>>('menuVisible'); //get
-  }
+    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    const toggleMenu = () => {
+      //@ts-ignore
+      menuVisible.value = !menuVisible.value;
+    };
+    return { toggleMenu };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .navBar {
-  position: relative;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 
   .icon {
     width: 32px;
@@ -40,7 +47,7 @@ export default {
 
   $navBar-color: #fff;
   //border-bottom: 3px solid  #1296db;
-  box-shadow: 0 3px 3px #1296db !important;
+  box-shadow: 0 3px 3px #1296db;
 
   background-color: $navBar-color;
   @mixin df-layout {

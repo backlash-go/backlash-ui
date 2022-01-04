@@ -11,7 +11,14 @@ export const router = createRouter({
 
     {path: '/', component: Home},
 
-    {path: '/doc', component: Doc},
+    {
+      path: '/doc', component: Doc,
+      children: [
+        {path: 'switch', component: () => import('@/views/switch/index.vue')},
+        {path: 'button', component: () => import('@/views/button/index.vue')},
+        //() => import('@/views/login/index.vue')
+      ]
+    },
   ],
 });
 router.afterEach(() => {
