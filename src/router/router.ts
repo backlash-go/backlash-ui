@@ -3,6 +3,8 @@ import Home from '@/views/Home.vue';
 
 import Doc from '@/views/Doc.vue';
 
+import Test from '@/views/Test.vue'
+
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -10,6 +12,7 @@ export const router = createRouter({
   routes: [
 
     {path: '/', component: Home},
+    {path: '/test', component: Test},
 
     {
       path: '/doc', component: Doc,
