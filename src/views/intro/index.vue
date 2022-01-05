@@ -1,12 +1,23 @@
 <template>
-<div>我是intro</div>
 
+
+  <article class="markdown-body" v-html="md">
+
+  </article>
 
 </template>
 
-<script lang="ts">
+<script>
+import md from '@/markdown/intros.md';
+
 export default {
-  name: 'Intro'
+  name: 'Intro',
+  data() {
+    return {
+      md,
+      d: '<h1>23123</h1>'
+    };
+  }
 };
 </script>
 

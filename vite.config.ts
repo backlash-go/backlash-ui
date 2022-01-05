@@ -1,25 +1,45 @@
 import {ConfigEnv, loadEnv, UserConfig} from 'vite';
+
+
 import vue from '@vitejs/plugin-vue';
 import {resolve} from 'path';
+
+import {md} from './plugins/md';
 
 import viteSvgIcons from 'vite-plugin-svg-icons';
 
 
-export default ({mode}: ConfigEnv): UserConfig => {
-  return {
-    plugins: [
-      vue(),
-      viteSvgIcons({
-        // Specify the icon folder to be cached
-        iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
-        // Specify symbolId format
-        symbolId: 'icon-[dir]-[name]',
-      })
-    ],
-    resolve: {
-      alias: {
-        '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
-      }
+export default {
+  plugins: [viteSvgIcons({
+    // Specify the icon folder to be cached
+    iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+    // Specify symbolId format
+    symbolId: 'icon-[dir]-[name]',
+  }),vue()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
     }
-  };
-}
+  }
+};
+
+// export default ({mode}: ConfigEnv): UserConfig => {
+//   return {
+//     plugins: [
+//       vue(),
+//       //@ts-ignore
+//       md(),
+//       viteSvgIcons({
+//         // Specify the icon folder to be cached
+//         iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+//         // Specify symbolId format
+//         symbolId: 'icon-[dir]-[name]',
+//       })
+//     ],
+//     resolve: {
+//       alias: {
+//         '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
+//       }
+//     }
+//   };
+// }
