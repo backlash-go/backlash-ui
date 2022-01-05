@@ -10,15 +10,14 @@ const history = createWebHashHistory();
 export const router = createRouter({
   history: history,
   routes: [
-
     {path: '/', component: Home},
     {path: '/test', component: Test},
-
     {
       path: '/doc', component: Doc,
       children: [
         {path: 'switch', component: () => import('@/views/switch/index.vue')},
         {path: 'button', component: () => import('@/views/button/index.vue')},
+        {path: 'intro', component: () => import('@/views/intro/index.vue')},
         //() => import('@/views/login/index.vue')
       ]
     },

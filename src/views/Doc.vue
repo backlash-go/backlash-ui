@@ -5,11 +5,10 @@
       <aside v-if="menuVisible" class="asideBar">
         <h2>文档</h2>
         <ol>
-          <li>介绍</li>
-          <li>更新日志</li>
+          <li>
+            <router-link to="/doc/intro">介绍</router-link>
+          </li>
         </ol>
-
-        <h2>组件列表</h2>
         <ol>
           <li>
             <router-link to="/doc/switch">Switch 组件</router-link>
@@ -60,6 +59,11 @@ export default {
 
 <style lang="scss" scoped>
 
+.router-link-active {
+  //color: red;
+  background: red;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -87,18 +91,21 @@ export default {
       background-color: white;
       box-shadow: 0 8px 8px #1296db;
 
+      h2:nth-child(1) {
+        padding-top: 10px;
+        padding-left: 16px;
+      }
+
       ol > li {
-        padding: 4px;
 
         > a {
+          display: block;
+          padding: 4px 16px;
           text-decoration: none;
         }
       }
 
-      h2 {
-        padding-top: 20px;
-        padding-left: 4px;
-      }
+
     }
 
     > main {

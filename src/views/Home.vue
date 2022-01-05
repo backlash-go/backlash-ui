@@ -58,12 +58,16 @@ export default {
 <style lang="scss" scoped>
 
 .banner {
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 100px 0;
   h1, h2 {
     color: #1296db;
+  }
+  h1 {
+    //padding-top: 80px;
   }
 
   background: linear-gradient(145deg,#e3fffd 0,#b7e9e6 100%);
