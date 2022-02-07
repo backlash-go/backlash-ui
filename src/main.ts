@@ -2,9 +2,9 @@ import {createApp} from 'vue';
 
 import App from "./App.vue";
 
-import './index.scss'
+import '@/index.scss'
 
-import {router} from '@/router/router';
+import {router} from './router/router';
 
 //vite svg doc： https://www.npmjs.com/package/vite-plugin-svg-icons
 
